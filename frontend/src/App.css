@@ -299,7 +299,7 @@ body {
 
 /* ── Services ── */
 .services-section {
-  background: white; border-radius: 20px; padding: 50px 40px; margin-bottom: 20px;
+  background: white; border-radius: 20px; padding: 24px 40px 40px; margin-bottom: 20px;
 }
 .services-grid {
   display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));

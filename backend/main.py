@@ -5,7 +5,7 @@ from models import Place
 import data
 
 app = FastAPI(title="Visiting Places API")
-allow_origins=["http://localhost:3000", "https://visiting-places-bgyubuv61-diddy-vaishnavis-projects.vercel.app/"]
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["http://localhost:3000"],
