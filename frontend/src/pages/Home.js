@@ -1,8 +1,7 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import PlaceCard from '../components/PlaceCard';
 
-const API = 'http://localhost:8000';
-
+const API = 'https://visiting-places.onrender.com';
 function Home() {
   const [places, setPlaces]               = useState([]);
   const [search, setSearch]               = useState('');
