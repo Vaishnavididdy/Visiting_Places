@@ -1,25 +1,25 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
 
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const scrollToTop = (e) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
-    <nav className={`navbar ${scrolled ? 'navbar-scrolled' : ''}`}>
+    <nav className="navbar">
       <Link to="/" className="navbar-brand">
         <span className="brand-icon">🌍</span>
         <span className="brand-text">Visiting Places</span>
       </Link>
       <div className="navbar-links">
-        <Link to="/" className={location.pathname === '/' ? 'nav-link active' : 'nav-link'}>Home</Link>
-        <Link to="/about" className={location.pathname === '/about' ? 'nav-link active' : 'nav-link'}>About</Link>
+        <a href="#top" className="nav-link" onClick={scrollToTop}>Home</a>
+        <a href="#destinations" className="nav-link">Destinations</a>
+        <a href="#services" className="nav-link">Services</a>
+        <a href="#contact" className="nav-link">Contact</a>
       </div>
     </nav>
   );
